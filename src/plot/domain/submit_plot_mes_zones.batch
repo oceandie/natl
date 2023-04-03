@@ -1,0 +1,12 @@
+#!/bin/bash -l
+
+#SBATCH --qos=normal                
+#SBATCH --mem=100000                    
+#SBATCH --ntasks=8                   
+#SBATCH --output=mes_zones.out       
+#SBATCH --time=360                    
+
+export MPLBACKEND='Agg'
+pycnd2 plot_mes_zones.py 
+unset MPLBACKEND
+
